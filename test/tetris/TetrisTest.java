@@ -32,6 +32,13 @@ class TetrisTest {
 		Tetromino piece = new Tetromino( new Point [] {new Point (0,0), new Point (1,0)}, Color.BLUE);
 		assertFalse (board.canMove(piece, -1, 0), "La pieza no debería de moverse fuera del borde izquierdo");
 		
-		
+	}
+	
+	@Test
+	
+	void testLineClearIncreaseScore() {
+		for(int x = 0; x < 10; x++) {
+			board.grid[19][x]= Color.GREEN;
+		}
 	}
 }
