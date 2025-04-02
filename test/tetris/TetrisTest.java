@@ -20,5 +20,18 @@ class TetrisTest {
 	void testInitialScoreIsZero() {
 		assertEquals(0, game.currentScore(), "The score doesn't initialize as zero");
 	}
+	void testPieceCanMoveDown() {
+		Tetromino piece = new Tetromino(new Point [] {new Point(4, 0), new Point(5, 0) }, Color.RED);
+		assertTrue(board.canMove(piece, 0, 1),  "The piece can't move down");
+				
+	}
 	
+	@Test
+	
+	void testPieceCannotMoveOutsideLeft() {
+		Tetromino piece = new Tetromino( new Point [] {new Point (0,0), new Point (1,0)}, Color.BLUE);
+		assertFalse (board.canMove(piece, -1, 0), "La pieza no debería de moverse fuera del borde izquierdo");
+		
+		
+	}
 }
